@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: hello-dubbo-service-user-consumer
+
+server:
+  port: 9090
+
+dubbo:
+  scan:
+    basePackages: com.byx.hello.dubbo.service.user.consumer.controller
+  application:
+    id: hello-dubbo-service-user-consumer
+    name: hello-dubbo-service-user-consumer
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
+  registry:
+    id: zookeeper     # 注册中心类型
+    address: zookeeper://192.168.80.131:2181?backup=192.168.80.131:2182, 192.168.80.131:2183  # 注册中心地址
+
+## 健康检查（可以不要）
+management:
+  endpoint:
+    dubbo:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-configs:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-references:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+  health:
+    dubbo:
+      status:
+        ## StatusChecker Name defaults (default : "memory", "load" )
+        defaults: memory
+        ## StatusChecker Name extras (default : empty )
+        extras: load,threadpool
+
+user:
+  service:
+    version: 1.0.0
