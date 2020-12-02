@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     })
     @Override
     public String sayHi() {
-//        return "Hello Dubbo";
-        throw new RuntimeException("Exception to show hystrix enabled.");
+        return "Hello Dubbo";
+//        throw new RuntimeException("Exception to show hystrix enabled.");
     }
 }
