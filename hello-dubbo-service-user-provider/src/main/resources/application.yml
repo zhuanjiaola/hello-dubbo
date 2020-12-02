@@ -8,18 +8,18 @@ dubbo:
   application:
     id: hello-dubbo-service-user-provider
     name: hello-dubbo-service-user-provider
-    qos-port: 22222   # Ĭ�϶˿�
-    qos-enable: true  # �������
+    qos-port: 22222
+    qos-enable: true
   protocol:
     id: dubbo
     name: dubbo
     port: 12345
-    status: server    # ״̬Ϊ�����ṩ��
+    status: server
+    serialization: kryo
   registry:
-    id: zookeeper     # ע����������
-    address: zookeeper://192.168.80.131:2181?backup=192.168.80.131:2182, 192.168.80.131:2183  # ע�����ĵ�ַ
+    id: zookeeper
+    address: zookeeper://192.168.86.111:2181?backup=192.168.86.111:2182, 192.168.86.111:2183
 
-## ������飨���Բ�Ҫ��
 management:
   endpoint:
     dubbo:
